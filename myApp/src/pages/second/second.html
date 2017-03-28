@@ -1,0 +1,700 @@
+<style type="text/css">
+	.myrotate{
+		-webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+	}
+	.inputstyles{
+		    background: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    color: #fff;
+	}
+	.headerheight{
+		height: 85px;
+	}
+	.button:active{
+		/* background-color: blue; */
+		border-radius: 50%;
+	}
+	.maincontent .scroll-content{
+       margin-top: 85px;
+	}
+	.maincontent{
+		background: url('assets/icon/scoreback1.png')no-repeat center center fixed;
+		 background-size: cover;
+	}
+	.backbtnicon{
+	font-size: 35px;
+	padding-left:5px;
+	color: #fff;
+}
+.gameicon{
+	width:70%;
+	height:70px;
+	float: right;
+	padding-right: 10px;
+	padding-bottom: 7px;
+}
+.playerdetailstext{
+	font-size: 16px;
+
+}
+.downtimeout{
+	width:17%;
+}
+.downtimeoutptag{
+	color: #fff;
+	margin:0px;
+}
+.downplayerscls{
+	color: #fff;
+	margin:0px;
+}
+.bottomserve{
+	color: #fff;
+	padding-left: 15px;
+	margin:0px;
+}
+.myrotateclassforserve{
+	margin:15px 0px 0px 0px;
+	 justify-content: space-between;
+	 width: 100%;
+}
+.buttonmainstyles{
+	border-radius: 3px;
+	width:32px;
+	height:32px;
+	border: 1px solid rgba(202, 200, 200, 0.46);
+}
+.buttonbackgroundbeforeactive{
+	 background-color: rgba(255, 255, 255, 0.18);
+
+}
+.nameoftourn{
+	color: #fff;margin-top: 0px;
+}
+.detailsspan{
+	padding-left: 12px;text-transform:uppercase;color:#080C2B ;
+
+}
+.gameicondiv{
+	padding: 0px;
+}
+	.activeclass{
+		border-radius: 27% !important;
+    width: 32px !important;
+    height: 32px !important;
+    left: 0 !important;
+    right: 0;
+    border: 1px solid rgba(202, 200, 200, 0.46) !important;
+    background: rgb(255, 247, 247) !important;
+    color: #122344 !important;
+  /*   font-weight: bold !important; */
+    font-size: 13px !important;
+    box-shadow: 0px 0px 9px 2px rgba(136, 136, 136, 0.56);
+
+	}
+	.overit{
+		    background: rgb(207, 140, 45) !important;
+		    color: rgba(8, 12, 43, 0.72) !important;
+		     font-size: 13px !important;
+		      font-weight: bold !important;
+	}
+	.serve{
+		    border: 1px solid #fff !important;
+    background: rgba(8, 12, 43, 0.72) !important;
+    box-shadow: 0px 0px 9px 2px rgba(136, 136, 136, 0.56) !important;
+    color: #fff !important;
+}
+.seveion{
+	    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.buttonstylediv{
+	    margin-left: 2px;
+    margin-right: 2px;
+}
+.scoresheetdiv{
+    border: 1px solid rgba(202, 200, 200, 0.46);
+   background: rgba(255, 255, 255, 0.07);
+   padding: 12px 0;
+   margin-left: 10px;
+   width: 98%;
+}
+.btnstyleforserverunning{
+    background-color: #fff;
+    color:#080C2B ;
+    border-radius: 50% ;
+/*style for serve running*/
+}
+.btnstylepoints{
+    background-color:#ff8500 ;
+    color:#080C2B ;
+/*style for get points orange*/
+}
+.btnstylepointsgreen{
+    background-color:#54e237 ;
+    color:#080C2B ;
+    /*style for get points green*/
+}
+.btnstylesforset{
+    background-color: #f3f3f3 ;
+    color:#080C2B ;
+    /*style for get points white for set*/
+}
+.textcoloractive{
+	color:#ff8500;
+	/* color orange for text */
+}
+.textcoloractiveblue{
+	 color:#080C2B ;
+}
+ @media screen and (min-width : 320px) and (max-width : 700px) {
+	.nameoftourn{
+		font-size: 15px;
+	}
+	.backbtnicon{
+		font-size: 25px;
+		margin-bottom: 11px;
+	}
+}
+</style>
+<ion-header>
+<ion-row class="headerheight">
+<ion-col width-10 center >
+  <ion-icon (click)="backtohome()" name="arrow-back" class="backbtnicon" ></ion-icon>
+  </ion-col>
+  <ion-col width-70 center>
+      <h4 class="nameoftourn">ROBSON RANCH PICKLEBALL TOURNAMENT</h4>
+  </ion-col>
+  <ion-col width-20>
+      <div  class="gameicondiv"><img  src="assets/icon/newicon.png" class="gameicon" ></div>
+  </ion-col>
+  </ion-row>
+</ion-header>
+<ion-content class="maincontent" >
+  <ion-row>
+	<ion-col  width-70 style="height: 105px;">
+	<div style="padding-left:5px;">
+
+	<div class="row">
+		 <p style="color:#fff;margin-bottom:0px;" ><span class="playerdetailstext">EVENT</span>   <span style="padding-left:21px">:</span><span class="detailsspan">{{navParams.data.EventName}}</span> </p>
+		 <p style="color:#fff;padding-left:30px;margin-bottom:0px;" ><span class="playerdetailstext">COURT</span>  <span style="padding-left:19px">:</span> <span style="padding-left: 9px;text-transform:uppercase;color:#080C2B ;">{{navParams.data.court}}</span></p>
+	</div>	 
+		 <p style="color:#fff;" ><span class="playerdetailstext">FORMAT</span> <span style="padding-left:7px">:</span><span class="detailsspan">{{navParams.data.GameFormat}}</span></p>
+
+		<p style="color:#fff;" ><span class="playerdetailstext">REFEREE</span> <span style="padding-left:7px">:</span><span class="detailsspan">{{navParams.data.Referee}}</span></p>
+		<p style="color:#fff;" >
+			<span class="playerdetailstext">PLAYERS
+			</span> 
+			<span  style="padding-left:6px">:
+			</span>
+			<span *ngIf="navParams.data.Serve == false">
+				<span *ngIf="navParams.data.Team1.Players.length == 2 && navParams.data.Team1.Players[0]['Served'] == false && navParams.data.Team1.Players[1]['Served'] == false" style="padding-left: 12px;text-transform:uppercase;">
+					<span (click)="FirstServe(navParams.data.Team1.Players[0]['id'],navParams.data.Team1.Team)">{{navParams.data.Team1.Players[0]["Name"]}}
+					</span>/
+					<span (click)="FirstServe(navParams.data.Team1.Players[1]['id'],navParams.data.Team1.Team)">{{navParams.data.Team1.Players[1]["Name"]}}
+					</span>
+				</span>
+				<span *ngIf="navParams.data.Team1.Players.length == 1 && navParams.data.Team1.Players[0]['Served'] == false" style="padding-left: 12px;text-transform:uppercase;" >
+					<span (click)="FirstServe(navParams.data.Team1.Players[0]['id'],navParams.data.Team1.Team)">
+					{{navParams.data.Team1.Players[0]["Name"]}}
+					</span>
+				</span>
+				<span style="padding-left: 14px;padding-right: 14px;font-size: 14px;">VS</span>
+
+
+				<span *ngIf="navParams.data.Team2.Players.length == 2 && navParams.data.Team2.Players[0]['Served'] == false && navParams.data.Team2.Players[1]['Served'] == false" style="padding-left: 12px;text-transform:uppercase;" >
+					<span (click)="FirstServe(navParams.data.Team2.Players[0]['id'],navParams.data.Team2.Team)">
+					{{navParams.data.Team2.Players[0]["Name"]}}
+					</span>/
+					<span (click)="FirstServe(navParams.data.Team2.Players[1]['id'],navParams.data.Team2.Team)">
+					{{navParams.data.Team2.Players[1]["Name"]}}
+					</span>
+				</span>
+				<span *ngIf="navParams.data.Team2.Players.length == 1 && navParams.data.Team2.Players[0]['Served'] == false" style="padding-left: 12px;text-transform:uppercase;" >
+				<span (click)="FirstServe(navParams.data.Team2.Players[0]['id'],navParams.data.Team2.Team)">
+				{{navParams.data.Team2.Players[0]["Name"]}}
+				</span>
+				</span>
+			</span>	
+
+
+
+			<span *ngIf="navParams.data.Serve == true">
+			<span style="padding-left: 12px;text-transform:uppercase;" >
+			<span >
+			<span style="color: rgba(255, 152, 0, 0.86);">{{Firstserve.nameA1}}</span><span *ngIf="Firstserve.nameA2 !=undefined">/</span><span>{{Firstserve.nameA2}}</span></span>
+			<span style="padding-left: 14px;padding-right: 14px;font-size: 14px;">VS</span>
+			<span>{{Firstserve.nameB1}}</span><span *ngIf="Firstserve.nameB2 !=undefined">/</span><span *ngIf="Firstserve.nameB2 !=undefined">{{Firstserve.nameB2}}</span>
+				
+			</span>
+			</span>
+		</p>
+
+	</div>
+
+	</ion-col>
+	<ion-col style="">
+			<select style="border:1px solid #f3f3f3
+	border-bottom:2px solid green;float:right;" (change)="Timeouts($event.target.value)" >
+					  <option  value="1min">1min</option>
+					  <option  value="2min">2min</option>
+					  <option  value="3min">3min</option>
+					  <option  value="4min">4min</option>
+					  <option 	value="5min">5min</option>
+					  <option  value="6min">6min</option>
+					  <option  value="7min">7min</option>
+					  <option  value="8min">8min</option>
+					</select>
+	</ion-col>
+	<ion-col>
+		
+		<button  style="width:38px;height:38px;background: rgba(255, 255, 255, 0.18);border: 1px solid rgba(202, 200, 200, 0.46)" class="button button-positive col">
+				   <p style="margin-top:6px;" (click)="StopTimer()" >stopTimeout</p>
+				</button>
+	</ion-col>
+</ion-row>
+<div style="margin-right:5%;float:right;" justify-content-end class="column">
+	<h4 justify-content-end style="color: #fff;font-weight: bold;padding-left: 45%;">Score</h4>
+	<div class="row " >
+	     <p class="seveion"><img src="assets/icon/serveicon.png"></p>
+		   <div *ngIf="navParams.data.Serve === false" class="row" style="margin-bottom: 10px;height: 40px;" >
+
+
+				<button  style="width:38px;height:38px;background: rgba(255, 255, 255, 0.18);border: 1px solid rgba(202, 200, 200, 0.46)" class="button button-positive col">
+				   <p style="margin-top:6px;"></p>
+				</button>
+			    <button style="border-radius: 3px;width:38px;height:38px;border: 1px solid rgba(202, 200, 200, 0.46);" class="button button-positive col buttonbackgroundbeforeactive">
+				   <p style="margin-top:6px;"></p>
+			   </button>
+			    <button style="border-radius: 3px;width:38px;height:38px;border: 1px solid rgba(202, 200, 200, 0.46);" class="button button-positive col buttonbackgroundbeforeactive">
+				   <p style="margin-top:6px;"></p>
+			   </button>
+			
+
+		</div>
+
+			 <div *ngIf="navParams.data.Serve === true" class="row buttonbackgroundbeforeactive" style="margin-bottom: 10px;border: 1px solid rgba(255, 255, 255,0.18);height: 40px;" >
+
+				
+					<button *ngIf="navParams.data.Serve === true && TeamAScore.Team === 'Team1'" style="background-color:rgba(255, 152, 0, 0.86);border-radius: 3px;width:38px;height:38px;border: 1px solid #fff;font-weight: bold;
+			   box-shadow: 0px 0px 9px 2px rgba(136, 136, 136, 0.56);" class="button button-positive col">
+					   <p style="margin-top:6px;color:#000;">{{Firstserve.TeamAPoints}}</p>
+					</button>
+					<button *ngIf="navParams.data.Serve === true && TeamAScore.Team === 'Team2'" style="background-color:rgba(255, 152, 0, 0.86);border-radius: 3px;width:38px;height:38px;border: 1px solid #fff;font-weight: bold;
+			   box-shadow: 0px 0px 9px 2px rgba(136, 136, 136, 0.56);" class="button button-positive col">
+					   <p style="margin-top:6px;color:#000;">{{Firstserve.TeamBPoints}}</p>
+					</button>
+				    <button *ngIf="navParams.data.Serve === true && TeamBScore.Team === 'Team1'" style="border-radius: 3px;width:38px;height:38px;border: 1px solid rgba(202, 200, 200, 0.46);font-weight: bold;" class="button button-positive col buttonbackgroundbeforeactive">
+					   <p style="margin-top:6px;color:#fff;">{{Firstserve.TeamAPoints}}</p>
+				   </button>
+				   <button *ngIf="navParams.data.Serve === true && TeamBScore.Team === 'Team2'" style="border-radius: 3px;width:38px;height:38px;border: 1px solid rgba(202, 200, 200, 0.46);font-weight: bold;" class="button button-positive col buttonbackgroundbeforeactive">
+					   <p style="margin-top:6px;color:#fff;">{{Firstserve.TeamBPoints}}</p>
+				   </button>
+					
+
+
+					<button *ngIf="TeamAactive" (click)="serveDownCount('TeamA',Firstserve.nameAServeCount)" 
+					style="border-radius: 3px;width:38px;height:38px;border: 1px solid rgba(202, 200, 200, 0.46);font-weight: bold;" class="button button-positive col buttonbackgroundbeforeactive">
+					   <p style="margin-top:6px;color:#fff;">{{Firstserve.nameAServeCount}}</p>
+				   </button>
+
+
+				   <button *ngIf="TeamBactive" (click)="serveDownCount('TeamB',Firstserve.nameBServeCount)" style="border-radius: 3px;width:38px;height:38px;border: 1px solid rgba(202, 200, 200, 0.46);font-weight: bold;" class="button button-positive col buttonbackgroundbeforeactive">
+					   <p style="margin-top:6px;color:#fff;">{{Firstserve.nameBServeCount}}</p>
+				   </button>
+				
+
+			</div>
+	<!--   <p class="seveion"><img src="assets/icon/serveicon.png"></p> -->
+	</div>
+</div>
+<div class="row"  style=";margin:15px 0px 7px 0px; justify-content: space-between;width: 100%;" >
+	<div style="width:20%;">
+		 <p style="color: #fff;padding-left: 22px;">SERVE</p>
+	</div>
+	<div style="width:12%;margin:10px 0px 7px 0px;">
+	<button class="buttonbackgroundbeforeactive" *ngIf="SideOutButtonActive" (click)="SideOut();" style="border: 1px solid rgba(202, 200, 200, 0.46);" align-items-end ><p style="color: #fff;margin-top: 5px;margin-bottom: 5px;">SIDE OUT</p></button>
+	<button class="buttonbackgroundbeforeactive" *ngIf="SideOutButtonActive === false" style="border: 1px solid rgba(202, 200, 200, 0.46);" align-items-end ><p style="color: #fff;margin-top: 5px;margin-bottom: 5px;">SIDE OUT</p></button>
+		 
+	</div>
+	<div style="width: 30%;">
+	<ion-row>
+      <ion-col >
+		 <p style="color: #fff;"><span>PLAYERS:</span> 
+		 <span *ngIf="navParams.data.Serve === true && TeamAactive===true ">  
+		 <span class="textcoloractive">{{Firstserve.nameA1}}</span>	
+		 <span *ngIf="Firstserve.nameA2 !=undefined">/{{Firstserve.nameA2}}</span></span>
+		<!--  <span *ngIf="navParams.data.Serve === true && b===true ">  
+		 <span class="textcoloractive">{{Firstserve.nameA1}}</span>	
+		 <span *ngIf="Firstserve.nameA2 !=undefined">/{{Firstserve.nameA2}}</span></span> -->
+		 <span *ngIf="navParams.data.Serve === true && TeamBactive===true " >
+		 <span class="textcoloractive" >{{Firstserve.nameB1}}</span>
+		  <span *ngIf="Firstserve.nameB2 !=undefined">/{{Firstserve.nameB2}}</span>
+		  </span>
+		 </p>
+		</ion-col>
+		</ion-row>
+	</div>
+
+
+	<div  style="width:17%;margin:10px 0px 0px 0px;" justify-content-end>	
+         <p style="color: #fff;">TIMEOUTS</p>
+	</div>
+	<!-- <div  *ngIf="navParams.data.Serve === true" style="width:17%;margin:10px 0px 0px 0px;" >	
+
+		 
+
+			<button (click)="Timeouts('6min')"   class="button button-positive"
+		    style="background:#fff;width:32px;height:32px;">6min
+					    </button>
+					    <button (click)="Timeouts('2min')"   class="button button-positive"
+		    style="background:#fff;width:32px;height:32px;">2min
+					    </button>
+					    <button (click)="Timeouts('1min')"   class="button button-positive"
+		    style="background:#fff;width:32px;height:32px;">1min
+					    </button>
+					    <button *ngIf="time"  (click)="StopTime()"   class="button button-positive"
+		    style="background:#fff;width:32px;height:32px;">Stop
+					    </button>
+					    <span *ngIf="timeSecondes!==0 || timeMints !==0 " style="margin-left:10px;"><span>{{timeMints}}</span>:<span>{{timeSecondes}}</span></span>
+
+						    
+	</div> -->
+</div>
+<div class="scoresheetdiv">
+ <div>
+ <div *ngIf="TeamAScore.SetOneScores !=undefined" class="row" style="width: 100%;margin:4px 0">
+
+
+					  <div style="width: 15%" justify-content-center>
+
+						 <button *ngIf="TeamAScore.SetOneServe === true "  class="button button-positive buttonmainstyles buttonbackgroundbeforeactive" style="left:25%;background:#fff;">
+					     <p  style="margin:0px;padding:0px;width:4%height: 27px;">S</p>
+					    </button>
+					    
+					    <button *ngIf="TeamAScore.SetOneServe === false"  class="button button-positive  buttonmainstyles buttonbackgroundbeforeactive" style="left:25%;">
+					     <p  style="margin:0px;padding:0px;width:4%height: 27px;">S</p>
+					    </button>
+
+
+
+					  </div>
+					    <div  style="width:70%;" justify-content-center class="row">
+					    <!-- <div justify-content: center> -->
+					       <div *ngFor="let score of TeamAScore.SetOneScores" class="buttonstylediv">
+					    <button *ngIf="score.clicked===false && score.Status=== true" (click)="UpdateScore(score);" class="button button-positive btnstyleforserverunning" style="width:32px;height:32px;left:0;right:0;border: 1px solid rgba(202, 200, 200, 0.46);">
+					     <p style="margin:0px;padding:0px;">{{score.Score}}</p>
+					    </button>
+					    <button *ngIf="score.clicked===false && score.Status=== false" class="button button-positive buttonmainstyles buttonbackgroundbeforeactive" style="left:0;right:0;">
+					     <p style="margin:0px;padding:0px;">{{score.Score}}</p>
+					    </button>
+					    <button *ngIf="score.clicked===true && score.ServicesDowen=== true" class="button button-positive buttonmainstyles" style="left:0;right:0;
+		    background: rgba(255, 152, 0, 0.86);color:#fff;">
+					     <p style="margin:0px;padding:0px;">{{score.Score}}</p>
+					    </button>
+					    <button *ngIf="score.clicked===true && score.ServicesDowen=== false" class="button button-positive buttonmainstyles" style="
+		    background: rgba(255, 152, 0, 0.86);color:#fff;">
+					     <p style="margin:0px;padding:0px;">{{score.Score}}</p>
+					    </button>
+					    </div> 
+					    </div>
+
+					    <div  style="width:15%" class="row" justify-content-center>
+					    <div *ngFor="let set of TeamAScore.SetOneTimeOuts" class="buttonstylediv">
+					    <button *ngIf="set.complete===false && set.Status === false"  class="button button-positive buttonbackgroundbeforeactive buttonmainstyles">
+					     <p style="margin:0px;padding:0px;">{{set.TimeOut}}</p>
+					    </button>
+					    <button *ngIf="set.complete===false && set.Status === true" (click)="TimerStart(set)" class="button button-positive buttonbackgroundbeforeactive buttonmainstyles btnstyleforserverunning">
+					     <p style="margin:0px;padding:0px;">{{set.TimeOut}}</p>
+					    </button>
+					     <button *ngIf="set.complete===true"  class="button button-positive buttonmainstyles buttonbackgroundbeforeactive" style="color:#fff; background: rgba(255, 152, 0, 0.86);">
+					     <p style="margin:0px;padding:0px;">{{set.TimeOut}}</p>
+					    </button>
+					    </div>
+					    
+					   </div>
+					  
+		  </div>
+           <div *ngIf="TeamAScore.SetTwoScores !=undefined"  class="row" style="width: 100%;margin:4px 0">
+					  <div style="width: 15%" justify-content-center>
+					  	 <button class="button button-positive button-block buttonmainstyles buttonbackgroundbeforeactive" style="left:25%;">
+					     <p *ngIf="TeamAScore.SetTwoServe==false" style="margin:0px;padding:0px;width:4%height: 27px;">S</p>
+					    </button>
+					  </div>
+					    <div  style="width:70%;" class="row" justify-content-center>
+					    <!-- <div justify-content: center> -->
+						      <div *ngFor="let score of TeamAScore.SetTwoScores" class="buttonstylediv">
+							    <button *ngIf="score.clicked===false && score.Status=== true" (click)="UpdateScore(score);" class="button button-positive buttonmainstyles buttonbackgroundbeforeactive" style="left:0;right:0;">
+							     <p  style="margin:0px;padding:0px;">{{score.Score}}</p>
+							    </button>
+							     <button *ngIf="score.clicked===false && score.Status=== false" class="button button-positive btnstyleforserverunning buttonmainstyles buttonbackgroundbeforeactive" style=" background-color: rgba(255, 255, 255, 0.18);border-radius: 3px;left:0;right:0;">
+							     <p  style="margin:0px;padding:0px;">{{score.Score}}</p>
+							    </button>
+							    <button *ngIf="score.clicked===true && score.ServicesDowen=== true"  class="button button-positive buttonmainstyles" style="left:0;right:0;border: 1px solid rgba(202, 200, 200, 0.46);
+				    background: rgba(255, 152, 0, 0.86);color:#fff;">
+							     <p  style="margin:0px;padding:0px;">{{score.Score}}</p>
+							    </button>
+							    <button *ngIf="score.clicked===true && score.ServicesDowen=== false"  class="button button-positive buttonmainstyles" style="left:0;right:0;
+				    background: rgba(255, 152, 0, 0.86);color:#fff;">
+							     <p  style="margin:0px;padding:0px;">{{score.Score}}</p>
+							    </button>
+	                        </div>
+					    </div>
+                       <div  style="width:15%" class="row" justify-content-center>
+					    <div *ngFor="let set of TeamAScore.SetTwoTimeOuts" class="buttonstylediv">
+						    <button *ngIf="set.complete===false && set.Status === false"  class="button button-positive buttonbackgroundbeforeactive buttonmainstyles">
+					     <p style="margin:0px;padding:0px;">{{set.TimeOut}}</p>
+					    </button>
+					    <button *ngIf="set.complete===false && set.Status === true" (click)="TimerStart(set)" class="button button-positive buttonbackgroundbeforeactive buttonmainstyles btnstyleforserverunning">
+					     <p style="margin:0px;padding:0px;">{{set.TimeOut}}</p>
+					    </button>
+					     <button *ngIf="set.complete===true"  class="button button-positive buttonmainstyles buttonbackgroundbeforeactive" style="color:#fff; background: rgba(255, 152, 0, 0.86);">
+					     <p style="margin:0px;padding:0px;">{{set.TimeOut}}</p>
+					    </button>
+					    </div>
+					    
+					   </div>
+		 </div>
+         <div *ngIf="TeamAScore.SetThreeScores !=undefined" class="row" style="width: 100%;margin:4px 0">
+					  <div style="width: 15%" justify-content-center>
+					  	 <button *ngIf="TeamAScore.SetTwoServe==false" class="button button-positive button-block buttonmainstyles buttonbackgroundbeforeactive" style="left:25%;">
+					     <p style="margin:0px;padding:0px;width:4%height: 27px;">S</p>
+					    </button>
+					  </div>
+					    <div  style="width:70%;" class="row" justify-content-center >
+					    <!-- <div justify-content: center> -->
+					    <div *ngFor="let score of TeamAScore.SetThreeScores" class="buttonstylediv">
+					    <button *ngIf="score.clicked===false && score.Status=== true" (click)="UpdateScore(score);"  class="button button-positive btnstyleforserverunning buttonmainstyles buttonbackgroundbeforeactive" style="left:0;right:0;">
+					     <p style="margin:0px;padding-top: 7px;">{{score.Score}}<p>
+					    </button>
+					     <button *ngIf="score.clicked===false && score.Status=== false" class="button button-positive buttonmainstyles buttonbackgroundbeforeactive" style="left:0;right:0;">
+					     <p style="margin:0px;padding-top: 7px;">{{score.Score}}<p>
+					    </button>
+					    <button *ngIf="score.clicked===true && score.ServicesDowen=== true"  class="button button-positive buttonmainstyles" style="left:0;right:0;
+		    background: rgba(255, 152, 0, 0.86);color:#fff;">
+					     <p style="margin:0px;padding-top: 7px;">{{score.Score}}<p>
+					    </button>
+					    <button *ngIf="score.clicked===true && score.ServicesDowen=== false"  class="button button-positive buttonmainstyles" style="left:0;right:0;
+		    background: rgba(255, 152, 0, 0.86);color:#fff;">
+					     <p style="margin:0px;padding-top: 7px;">{{score.Score}}<p>
+					    </button>
+					    </div>
+					    </div>
+
+					   <div  style="width:15%" class="row" justify-content-center>
+					    <div *ngFor="let set of TeamAScore.SetThreeTimeOuts" class="buttonstylediv">
+					    <button *ngIf="set.complete===false && set.Status === false"  class="button button-positive buttonbackgroundbeforeactive buttonmainstyles">
+					     <p style="margin:0px;padding:0px;">{{set.TimeOut}}</p>
+					    </button>
+					    <button *ngIf="set.complete===false && set.Status === true" (click)="TimerStart(set)" class="button button-positive buttonbackgroundbeforeactive buttonmainstyles btnstyleforserverunning">
+					     <p style="margin:0px;padding:0px;">{{set.TimeOut}}</p>
+					    </button>
+					     <button *ngIf="set.complete===true"  class="button button-positive buttonmainstyles buttonbackgroundbeforeactive" style="color:#fff; background: rgba(255, 152, 0, 0.86);">
+					     <p style="margin:0px;padding:0px;">{{set.TimeOut}}</p>
+					    </button>
+					    </div>
+					    
+					   </div>
+					  
+		  </div>
+  </div>
+</div>
+<div class="myrotate scoresheetdiv" style="margin-top:10px;">
+   <div>
+          <div *ngIf="TeamBScore.SetOneScores !=undefined" class="row" style="width: 100%;margin:4px 0">
+					  <div style="width: 15%" justify-content-center>
+					  	 <button *ngIf="TeamBScore.SetOneServe === true "  class="button button-positive buttonmainstyles buttonbackgroundbeforeactive" style="left:25%;background:#fff;">
+					     <p  style="margin:0px;padding:0px;width:4%height: 27px;">S</p>
+					    </button>
+					    
+					    <button *ngIf="TeamBScore.SetOneServe === false"  class="button button-positive  buttonmainstyles buttonbackgroundbeforeactive" style="left:25%;">
+					     <p  style="margin:0px;padding:0px;width:4%height: 27px;">S</p>
+					    </button>
+					  </div>
+					    <div  style="width:70%;" justify-content-center class="row" >
+					    <!-- <div justify-content: center> -->
+					       <div  *ngFor="let score of TeamBScore.SetOneScores" class="buttonstylediv">
+					    <button *ngIf="score.clicked===false" class="button button-positive buttonmainstyles buttonbackgroundbeforeactive" style="left:0;right:0;">
+					     <p style="margin:0px;padding:0px;">{{score.Score}}</p>
+					    </button>
+					    <button *ngIf="score.clicked===true && score.ServicesDowen=== true" class="button button-positive buttonmainstyles" style="left:0;right:0;
+		   background: rgba(255, 152, 0, 0.86);color:#fff;">
+					     <p style="margin:0px;padding:0px;">{{score.Score}}</p>
+					    </button>
+					    <button *ngIf="score.clicked===true && score.ServicesDowen=== false" class="button button-positive buttonmainstyles" style="left:0;right:0;
+		   background: rgba(255, 152, 0, 0.86);color:#fff;">
+					     <p style="margin:0px;padding:0px;">{{score.Score}}</p>
+					    </button>
+					    </div> 
+					    </div>
+
+					    <div  style="width:15%" class="row" justify-content-center>
+					    <div *ngFor="let set of TeamBScore.SetOneTimeOuts" class="buttonstylediv">
+					    <button *ngIf="set.complete===false"  class="button button-positive buttonmainstyles buttonbackgroundbeforeactive" >
+					     <p style="margin:0px;padding:0px;">{{set.TimeOut}}</p>
+					    </button>
+					     <button *ngIf="set.complete===true"  class="button button-positive buttonmainstyles buttonbackgroundbeforeactive" >
+					     <p style="margin:0px;padding:0px;">{{set.TimeOut}}</p>
+					    </button>
+					    </div>
+					    
+					   </div>
+					  
+		  </div>
+          <div *ngIf="TeamBScore.SetTwoScores !=undefined" class="row" style="width: 100%;margin:4px 0">
+					  <div style="width: 15%" justify-content-center>
+					  	 <button class="button button-positive button-block buttonmainstyles buttonbackgroundbeforeactive" style="left:25%;">
+					     <p *ngIf="TeamBScore.SetTwoServe==false" style="margin:0px;padding:0px;width:4%height: 27px;">S</p>
+					    </button>
+					  </div>
+					    <div  style="width:70%;" class="row" justify-content-center>
+					    <!-- <div justify-content: center> -->
+					      <div *ngFor="let score of TeamBScore.SetTwoScores" class="buttonstylediv">
+						    <button *ngIf="score.clicked===false"  class="button button-positive buttonmainstyles buttonbackgroundbeforeactive" style="left:0;right:0;">
+						     <p  style="margin:0px;padding:0px;">{{score.Score}}</p>
+						    </button>
+						    <button *ngIf="score.clicked===true && score.ServicesDowen=== true"  class="button button-positive buttonmainstyles" style="left:0;right:0;
+			    background: rgba(255, 152, 0, 0.86);color:#fff;">
+						     <p  style="margin:0px;padding:0px;">{{score.Score}}</p>
+						    </button>
+
+						    <button *ngIf="score.clicked===true && score.ServicesDowen=== false"  class="button button-positive buttonmainstyles" style="left:0;right:0;
+			    background: rgba(255, 152, 0, 0.86);color:#fff;">
+						     <p  style="margin:0px;padding:0px;">{{score.Score}}</p>
+						    </button>
+
+					    </div>
+					    </div>
+
+					    <div  style="width:15%" class="row" justify-content-center>
+					    <div *ngFor="let set of TeamBScore.SetTwoTimeOuts" class="buttonstylediv">
+					    <button *ngIf="set.complete===false"  class="button button-positive buttonmainstyles buttonbackgroundbeforeactive" >
+					     <p style="margin:0px;padding:0px;">{{set.TimeOut}}</p>
+					    </button>
+					     <button *ngIf="set.complete===true"  class="button button-positive buttonmainstyles buttonbackgroundbeforeactive" >
+					     <p style="margin:0px;padding:0px;">{{set.TimeOut}}</p>
+					    </button>
+					    </div>
+					    
+					   </div>
+					  
+		  </div>
+          <div *ngIf="TeamBScore.SetThreeScores !=undefined" class="row" style="width: 100%;margin:4px 0">
+					  <div style="width: 15%" justify-content-center>
+					  	 <button *ngIf="TeamBScore.SetTwoServe==false" class="button button-positive button-block buttonmainstyles buttonbackgroundbeforeactive" style="left:25%;">
+					     <p style="margin:0px;padding:0px;width:4%height: 27px;">S</p>
+					    </button>
+					  </div>
+					    <div  style="width:70%;" class="row" justify-content-center>
+					   
+					    <div *ngFor="let score of TeamBScore.SetThreeScores" class="buttonstylediv">
+					    <button *ngIf="score.clicked===false"  class="button button-positive buttonmainstyles buttonbackgroundbeforeactive" style="left:0;right:0;">
+					     <p style="margin:0px;padding-top: 7px;">{{score.Score}}<p>
+					    </button>
+					    <button *ngIf="score.clicked===true && score.ServicesDowen=== false"  class="button button-positive buttonmainstyles buttonbackgroundbeforeactive" style="left:0;right:0;">
+					     <p style="margin:0px;padding-top: 7px;">{{score.Score}}<p>
+					    </button>
+					    </div>
+					    </div>
+
+					   <div  style="width:15%" class="row" justify-content-center>
+					    <div *ngFor="let set of TeamBScore.SetThreeTimeOuts" class="buttonstylediv">
+					    <button *ngIf="set.complete===false"  class="button button-positive buttonmainstyles buttonbackgroundbeforeactive" style>
+					     <p style="margin:0px;padding:0px;">{{set.TimeOut}}</p>
+					    </button>
+					     <button *ngIf="set.complete===true"  class="button button-positive buttonmainstyles" style="
+		   background: rgba(255, 152, 0, 0.86); color:#fff;">
+					     <p style="margin:0px;padding:0px;">{{set.TimeOut}}</p>
+					    </button>
+					    </div>
+					    
+					   </div>
+					  
+		  </div>
+    </div>
+</div>
+<div class="row myrotate myrotateclassforserve">
+	<div style="width:12%;">
+		 <p class="bottomserve">SERVE</p>
+	</div>
+	<div style="width: 30%;">
+		<ion-row>
+			<ion-col >
+				 <p class="downplayerscls" ><span>PLAYERS :</span>
+				  <span *ngIf="navParams.data.Serve === true && TeamAactive===false ">  
+				 <span >{{Firstserve.nameA1}}</span>	
+				 <span *ngIf="Firstserve.nameA2 !=undefined">/{{Firstserve.nameA2}}</span></span>
+				 <span *ngIf="navParams.data.Serve === true && TeamBactive===false " >
+				 <span  >{{Firstserve.nameB1}}</span>
+				  <span *ngIf="Firstserve.nameB2 !=undefined">/{{Firstserve.nameB2}}</span>
+				  </span>
+				 </p>
+				</ion-col>
+		</ion-row>
+	</div>
+	<div class="downtimeout" >	
+		 <p class="downtimeoutptag">TIMEOUTS</p>
+	</div>
+</div>
+
+<!-- <div style="width: 30%;">
+		<ion-row>
+			<ion-col >
+				 <p class="downplayerscls" ><span>PLAYERS :</span>
+				  <span *ngIf="navParams.data.Serve === true && TeamAactive===false ">  
+				 <span class="textcoloractive">{{Firstserve.nameA1}}</span>	
+				 <span *ngIf="Firstserve.nameA2 !=undefined">/{{Firstserve.nameA2}}</span></span>
+				 <span *ngIf="navParams.data.Serve === true && TeamBactive===false " >
+				 <span class="textcoloractive" >{{Firstserve.nameB1}}</span>
+				  <span *ngIf="Firstserve.nameB2 !=undefined">/{{Firstserve.nameB2}}</span>
+				  </span>
+				 </p>
+				</ion-col>
+		</ion-row>
+	</div> -->
+
+	<div *ngIf="Firstserve.Winner !=undefined " class="row" style="margin-left:7px;border: 1px solid rgba(202, 200, 200, 0.46);
+    background: rgba(255, 255, 255, 0.18);width: 98%;height: 35px;margin-top: 25px;" >
+
+  <P  style="color:#fff;margin: 0;font-size: 15px;padding-top:7px;padding-left:10px;">Match Winners Scores : </P>
+                       <div style="width:11%">
+                                <button style="background-color:#fff;border-radius: 3px;width:37px;height:33px;border: 1px solid rgba(202, 200, 200, 0.46);
+    background: rgba(255, 255, 255, 0.18);" class="button button-positive ">
+                                 <p  *ngIf="Firstserve.Winner.winnerteam==='teamA'" style="margin-bottom: 2%;margin-top:3px;">{{Firstserve.TeamAPoints}}</p>
+                                 <p  *ngIf="Firstserve.Winner.winnerteam==='teamB'" style="margin-bottom: 2%;margin-top:3px;">
+                                 {{Firstserve.TeamBPoints}}</p>
+                                </button>
+                               
+                                <button style="background-color:#fff;border-radius: 3px;width:37px;height:33px;border: 1px solid rgba(202, 200, 200, 0.46);
+    background: rgba(255, 255, 255, 0.18);" class="button button-positive col">
+                                 <p *ngIf="Firstserve.Winner.winnerteam !='teamA'" style="margin-top:5px;">{{Firstserve.TeamAPoints}}</p>
+                                 <p *ngIf="Firstserve.Winner.winnerteam !='teamB'" style="margin-top:5px;">{{Firstserve.TeamBPoints}}</p>
+                                </button>
+                       </div>
+                         <p style="color:#fff;margin-right: 15px;margin-top:8px;">Initials</p>
+                       <div style="width:5%">
+                            <button style="background-color:#fff;border-radius: 3px;width:50px;height:33px;border: 1px solid rgba(202, 200, 200, 0.46);
+    background: rgba(255, 255, 255, 0.18);" class="button button-positive col">
+                             <p style="margin-top:3px;"></p>
+                            </button>
+                
+                        </div>
+</div>
+
+
+</ion-content>
+
+
+
+
+
+
+
